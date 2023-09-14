@@ -303,6 +303,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 5rem;
+  margin-bottom: 10rem;
 }
 #support_section img {
   width: 250px;
@@ -367,4 +368,17 @@ body {
   border-radius: 50px;
   padding: 0.9rem 6rem;
   cursor: pointer;
+}
+#footer {
+  margin-top: 12rem;
+  color: #e2dfdd;
+  display: flex;
+  font-size: 0.8rem;
+  justify-content: space-between;
+}
+#footer a {
+  color: #e2dfdd;
+  font-size: 0.8rem;
+  text-decoration: none;
+  margin-right: 1rem;
 }

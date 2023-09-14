@@ -7,7 +7,7 @@
       src="https://kit.fontawesome.com/db9995df21.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./js/script.js"></script>
+    <script type="module" defer src="./js/script.js"></script>
     <link rel="stylesheet" href="./style.css" />
     <title>Insurance</title>
   </head>
@@ -223,6 +223,95 @@
       <section id="calculate_and_links_section">
         <div class="calculate_numbers">
           <h1>Need numbers?</h1>
+          <div class="tab_container">
+            <button class="tab_btn" data-tab="1">Travel</button>
+            <button class="tab_btn" data-tab="2">Health</button>
+            <button class="tab_btn" data-tab="3">CASCO</button>
+            <button class="tab_btn" data-tab="4">Mortgage</button>
+            <button class="tab_btn" data-tab="5">Fire</button>
+          </div>
+          <div class="tab_content">
+            <div id="tab1" class="tab">
+              <form action="">
+                <div class="inputs">
+                  <div>
+                    <label for="">Enter the country</label>
+                    <input type="text" placeholder="Australia" required />
+                  </div>
+                  <div>
+                    <label for="">Enter Travel dates</label>
+                    <input type="date" required />
+                  </div>
+                </div>
+
+                <button>Calculate</button>
+              </form>
+            </div>
+            <div id="tab2" class="tab">
+              <form action="">
+                <div class="inputs">
+                  <div>
+                    <label for="">Enter the country</label>
+                    <input type="text" placeholder="Australia" required />
+                  </div>
+                  <div>
+                    <label for="">Enter Health Status</label>
+                    <input type="text" placeholder="Health" required />
+                  </div>
+                </div>
+
+                <button>Calculate</button>
+              </form>
+            </div>
+            <div id="tab3" class="tab">
+              <form action="">
+                <div class="inputs">
+                  <div>
+                    <label for="">Enter the country</label>
+                    <input type="text" placeholder="Australia" required />
+                  </div>
+                  <div>
+                    <label for="">Enter CASCO</label>
+                    <input type="text" placeholder="CASCO" required />
+                  </div>
+                </div>
+
+                <button>Calculate</button>
+              </form>
+            </div>
+            <div id="tab4" class="tab">
+              <form action="">
+                <div class="inputs">
+                  <div>
+                    <label for="">Enter the country</label>
+                    <input type="text" placeholder="Australia" required />
+                  </div>
+                  <div>
+                    <label for="">Enter Mortgage</label>
+                    <input type="text" placeholder="Mortgage" required />
+                  </div>
+                </div>
+
+                <button>Calculate</button>
+              </form>
+            </div>
+            <div id="tab5" class="tab">
+              <form action="">
+                <div class="inputs">
+                  <div>
+                    <label for="">Enter the country</label>
+                    <input type="text" placeholder="Australia" required />
+                  </div>
+                  <div>
+                    <label for="">Enter Fire</label>
+                    <input type="text" placeholder="Fire" required />
+                  </div>
+                </div>
+
+                <button>Calculate</button>
+              </form>
+            </div>
+          </div>
         </div>
         <div class="links_section">
           <div>

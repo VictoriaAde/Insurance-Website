@@ -46,3 +46,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const interval = 4000;
   setInterval(autoAdvanceSlide, interval);
 });
+
+// Tab
+document.addEventListener("DOMContentLoaded", function () {
+  // Initially show the first tab
+  document.getElementById("tab1").classList.add("active");
+
+  // Get all tab buttons
+  const tabButtons = document.querySelectorAll(".tab_btn");
+
+  // Add click event listeners to each tab button
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Get the data-tab attribute value (e.g., "1", "2", etc.)
+      const tabNumber = button.getAttribute("data-tab");
+
+      // Hide all tabs
+      const tabs = document.querySelectorAll(".tab");
+      tabs.forEach((tab) => {
+        tab.classList.remove("active");
+      });
+
+      // Show the selected tab based on the data-tab value
+      const selectedTab = document.getElementById(`tab${tabNumber}`);
+      selectedTab.classList.add("active");
+    });
+  });
+});

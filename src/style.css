@@ -58,9 +58,12 @@ body {
   line-height: 6.5rem;
   transform: scale(1.2, 1.6);
 }
-#hero_section .hero_text_div {
+#hero_section .hero_text_div p {
   color: #e2dfdd;
   margin-bottom: 3rem;
+}
+#hero_section .hero_text_div a {
+  color: #84d4e9;
 }
 .hero_text_and_image {
   display: flex;
@@ -99,9 +102,9 @@ body {
 }
 
 /* services_section */
-/* #services_section {
-  position: relative;
-} */
+#services_section {
+  margin-bottom: 10rem;
+}
 #services_section .first {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -182,4 +185,113 @@ body {
 }
 .services_six {
   position: relative;
+}
+
+/* testimonial_section */
+#testimonial_section {
+  display: flex;
+  gap: 6rem;
+}
+.slide_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+  background-color: #0d1d30;
+  border-radius: 50px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.slide_item {
+  display: none;
+  gap: 3rem;
+  width: 100%;
+}
+
+.slide_item img {
+  object-fit: cover;
+  max-width: 100%;
+  border-radius: 100px;
+  height: 400px;
+}
+
+.slide_item h3 {
+  font-size: 1.9rem;
+  margin: 1rem 0 1.3rem;
+  color: #e2dfdd;
+  transform: scale(1.2, 1.3);
+  letter-spacing: -1px;
+  transform-origin: 0% 0%;
+}
+
+.slide_item p {
+  font-size: 1rem;
+  color: #a8abb0;
+  margin-bottom: 2.5rem;
+}
+.slide_item span {
+  color: #5b5d60;
+  display: block;
+  margin-bottom: 3rem;
+}
+.slide_item button {
+  background-color: #84d4e9;
+  color: #0b0f17;
+  border-radius: 30px;
+  width: 100%;
+  font-weight: 600;
+  border: none;
+  padding: 1rem 0;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.slide_indication {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#slide_indicators {
+  display: flex;
+  justify-content: center;
+}
+
+.slide_indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #585656;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slide_indicator.active {
+  background-color: #e2dfdd;
+}
+.testimonial_heading {
+  display: flex;
+  gap: 1rem;
+  width: 200px;
+  margin-top: 4rem;
+}
+.testimonial_heading span {
+  background-color: #e2dfdd;
+  color: #0b0f17;
+  border-radius: 50px;
+  padding: 4px;
+  width: 18px;
+  height: 18px;
+  font-size: 1rem;
+}
+.testimonial_heading h1 {
+  font-size: 5rem;
+  color: #e2dfdd;
+  transform: scale(1, 1.8);
+  letter-spacing: -1px;
+  transform-origin: 0% 0%;
+  line-height: 4rem;
+  margin: 0;
 }

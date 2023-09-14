@@ -49,6 +49,24 @@ class App {
         y: 100,
       }
     );
+
+    gsap.set(
+      ".calculate_numbers h1, .tab_btn, .tab_content, .links_section div",
+      {
+        opacity: 0,
+        x: -100,
+      }
+    );
+
+    gsap.set(".links_section div", {
+      opacity: 0,
+      x: 100,
+    });
+
+    gsap.set("#footer div", {
+      opacity: 0,
+      y: 100,
+    });
   }
 
   _createLenis() {
@@ -110,7 +128,7 @@ class App {
         "-=1"
       )
       .to(
-        ".support_text_one, .support_text_two,.support_text_div button, #support_section img",
+        ".support_text_one, .support_text_two, .support_text_div button, #support_section img",
         {
           opacity: 1,
           y: 0,
@@ -118,7 +136,33 @@ class App {
           duration: 2,
         },
         "-=1"
-      );
+      )
+      .to(
+        ".calculate_numbers h1, .tab_btn, .tab_content",
+        {
+          opacity: 1,
+          x: 0,
+          duration: 2,
+          stagger: 0.1,
+        },
+        "-=1"
+      )
+      .to(
+        ".links_section div",
+        {
+          opacity: 1,
+          x: 0,
+          duration: 2,
+          stagger: 0.1,
+        },
+        "-=1"
+      )
+      .to("#footer div", {
+        opacity: 1,
+        y: 0,
+        duration: 2,
+        stagger: 0.1,
+      });
   }
 
   _render(time) {

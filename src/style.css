@@ -10,7 +10,9 @@ body {
 #main {
   padding: 2rem 4rem;
 }
-
+[data-hidden] {
+  opacity: 0;
+}
 /* nav */
 #nav {
   display: flex;
@@ -105,6 +107,7 @@ body {
 /* services_section */
 #services_section {
   margin-bottom: 10rem;
+  transition: all 1;
 }
 #services_section .first {
   display: grid;
@@ -116,6 +119,9 @@ body {
 #services_section img {
   width: 100%;
   border-radius: 50px;
+}
+#services_section img:hover {
+  scale: 1.02;
 }
 #services_section span {
   position: absolute;

@@ -90,7 +90,7 @@ class App {
         start: "10% 30%",
         end: "93% 3%",
         scrub: true,
-        markers: true,
+        markers: false,
       },
     });
 

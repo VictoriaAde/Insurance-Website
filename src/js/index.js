@@ -77,6 +77,15 @@ class App {
 
   _createIntro() {
     const tl = gsap.timeline();
+    //   {
+    //   scrollTrigger: {
+    //     trigger: "#services_section",
+    //     start: "middle middle",
+    //     end: "bottom top",
+    //     scrub: true,
+    //     markers: true,
+    //   },
+    // }
 
     tl.to(".nav_middle_links, .nav_end_links", {
       opacity: 1,

@@ -1,5 +1,7 @@
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 class App {
   constructor() {
@@ -14,60 +16,63 @@ class App {
   }
 
   _setInitialStates() {
-    gsap.set("#hero_section h1", {
+    gsap.set(".nav_middle_links, .nav_end_links", {
+      opacity: 1,
       x: -100,
-      y: -100,
-      opacity: 0,
     });
 
-    gsap.set(".nav_middle_links, .nav_end_links", {
-      opacity: 0,
-      x: -100,
+    gsap.set("#hero_section h1", {
+      y: 100,
+      opacity: 1,
     });
 
     gsap.set(".hero_text_one, .hero_text_two, .hero_img_div", {
-      opacity: 0,
+      y: 100,
+      opacity: 1,
+    });
+
+    gsap.set(".services_one, .services_two, .services_three", {
+      y: 100,
+      opacity: 1,
+    });
+
+    gsap.set(".services_four, .services_five, .services_six", {
+      y: 100,
+      opacity: 1,
+    });
+
+    gsap.set("#testimonial_section", {
+      y: 100,
+      opacity: 1,
+    });
+
+    gsap.set("#support_section", {
+      opacity: 1,
       y: 100,
     });
 
-    gsap.set(
-      ".services_one, .services_two, .services_three, .services_four, .services_five, .services_six",
-      {
-        y: 100,
-        opacity: 0,
-        scale: 1,
-      }
-    );
+    // gsap.set("#support_section h1, #support_section h2", {
+    //   opacity: 1,
+    //   y: 100,
+    // });
 
-    gsap.set("#support_section h1, #support_section h2", {
-      opacity: 0,
-      x: -100,
-      y: -100,
-    });
+    // gsap.set(".support_text_one, .support_text_two, .support_text_div button", {
+    //   opacity: 1,
+    //   y: 100,
+    // });
 
-    gsap.set(
-      ".support_text_one, .support_text_two, .support_text_div button, #support_section img",
-      {
-        opacity: 0,
-        y: 100,
-      }
-    );
+    // gsap.set(" #support_section img", {
+    //   opacity: 1,
+    //   y: 100,
+    // });
 
-    gsap.set(
-      ".calculate_numbers h1, .tab_btn, .tab_content, .links_section div",
-      {
-        opacity: 0,
-        x: -100,
-      }
-    );
-
-    gsap.set(".links_section div", {
-      opacity: 0,
-      x: 100,
+    gsap.set(".calculate_and_links_section", {
+      opacity: 1,
+      y: 100,
     });
 
     gsap.set("#footer div", {
-      opacity: 0,
+      opacity: 1,
       y: 100,
     });
   }
@@ -79,19 +84,18 @@ class App {
   }
 
   _createIntro() {
-    const tl = gsap.timeline();
-    //   {
-    //   scrollTrigger: {
-    //     trigger: "#services_section",
-    //     start: "middle middle",
-    //     end: "bottom top",
-    //     scrub: true,
-    //     markers: true,
-    //   },
-    // }
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "10% 30%",
+        end: "93% 3%",
+        scrub: true,
+        markers: true,
+      },
+    });
 
     tl.to(".nav_middle_links, .nav_end_links", {
-      opacity: 1,
+      opacity: 0.7,
       x: 0,
       duration: 2,
       stagger: 0.1,
@@ -99,8 +103,7 @@ class App {
       .to(
         "#hero_section h1",
         {
-          opacity: 1,
-          x: 0,
+          opacity: 0.6,
           y: 0,
           ease: "expo.out",
           duration: 2,
@@ -111,15 +114,25 @@ class App {
       .to(
         ".hero_text_one, .hero_text_two, .hero_img_div",
         {
-          opacity: 1,
-          x: 0,
+          opacity: 0.6,
+          y: 0,
           ease: "expo.out",
           duration: 2,
+        },
+        1
+      )
+      .to(
+        ".services_one, .services_two, .services_three",
+        {
+          opacity: 0.6,
+          y: 0,
+          ease: "expo.out",
+          duration: 1,
         },
         "-=1"
       )
       .to(
-        ".services_one, .services_two, .services_three, .services_four, .services_five, .services_six",
+        ".services_four, .services_five, .services_six",
         {
           opacity: 1,
           y: 0,
@@ -128,11 +141,16 @@ class App {
         },
         "-=1"
       )
+      .to("#testimonial_section", {
+        opacity: 1,
+        y: 0,
+        ease: "expo.out",
+        duration: 2,
+      })
       .to(
-        "#support_section h1, #support_section h2",
+        "#support_section",
         {
           opacity: 1,
-          x: 0,
           y: 0,
           duration: 2,
           ease: "expo.out",
@@ -140,32 +158,12 @@ class App {
         "-=1"
       )
       .to(
-        ".support_text_one, .support_text_two, .support_text_div button, #support_section img",
+        ".calculate_and_links_section",
         {
           opacity: 1,
           y: 0,
-          ease: "expo.out",
           duration: 2,
-        },
-        "-=1"
-      )
-      .to(
-        ".calculate_numbers h1, .tab_btn, .tab_content",
-        {
-          opacity: 1,
-          x: 0,
-          duration: 2,
-          stagger: 0.1,
-        },
-        "-=1"
-      )
-      .to(
-        ".links_section div",
-        {
-          opacity: 1,
-          x: 0,
-          duration: 2,
-          stagger: 0.1,
+          // stagger: 0.1,
         },
         "-=1"
       )

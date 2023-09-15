@@ -19,7 +19,7 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #e2dfdd;
-  margin-bottom: 8rem;
+  margin-bottom: 3rem;
 }
 #nav div:nth-child(2) {
   display: flex;
@@ -106,14 +106,15 @@ body {
 
 /* services_section */
 #services_section {
-  margin-bottom: 10rem;
+  margin-bottom: 8rem;
   transition: all 1;
 }
 #services_section .first {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 350px;
-  grid-gap: 1.5rem;
+  grid-row-gap: 4rem;
+  grid-column-gap: 1.5rem;
   margin-bottom: 2rem;
 }
 #services_section img {
@@ -198,7 +199,6 @@ body {
 #testimonial_section {
   display: flex;
   gap: 6rem;
-  margin-bottom: 11rem;
 }
 .slide_container {
   display: flex;
@@ -308,8 +308,13 @@ body {
 #support_section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
   grid-gap: 5rem;
-  margin-bottom: 10rem;
+  margin: 10rem 0;
+}
+.support_img_div {
+  display: flex;
+  justify-content: center;
 }
 #support_section img {
   width: 250px;

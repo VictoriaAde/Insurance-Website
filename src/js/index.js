@@ -1,3 +1,6 @@
+import Lenis from "@studio-freight/lenis";
+import gsap from "gsap";
+
 class App {
   constructor() {
     this._initialize();

@@ -32,6 +32,10 @@ class App {
       opacity: 1,
     });
 
+    gsap.set(".hero_img_div img", {
+      scaleY: 1,
+    });
+
     gsap.set(".services_one, .services_two, .services_three", {
       y: 100,
       opacity: 1,
@@ -42,30 +46,10 @@ class App {
       opacity: 1,
     });
 
-    // gsap.set("#testimonial_section", {
-    //   y: 100,
-    //   opacity: 1,
-    // });
-
     gsap.set("#support_section", {
       opacity: 1,
       y: 100,
     });
-
-    // gsap.set("#support_section h1, #support_section h2", {
-    //   opacity: 1,
-    //   y: 100,
-    // });
-
-    // gsap.set(".support_text_one, .support_text_two, .support_text_div button", {
-    //   opacity: 1,
-    //   y: 100,
-    // });
-
-    // gsap.set(" #support_section img", {
-    //   opacity: 1,
-    //   y: 100,
-    // });
 
     gsap.set(".calculate_and_links_section", {
       opacity: 1,
@@ -85,6 +69,26 @@ class App {
   }
 
   _createIntro() {
+    const tlImg = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".hero_img_div img",
+        start: "5% 10%",
+        end: "93% 1%",
+        scrub: true,
+        markers: true,
+      },
+    });
+
+    tlImg.to(
+      ".hero_img_div img",
+      {
+        scaleY: 0,
+        duration: 5,
+        ease: "power4.out",
+      },
+      "-=1"
+    );
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#hero",

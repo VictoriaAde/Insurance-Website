@@ -129,7 +129,6 @@ body {
 /* services_section */
 #services_section {
   margin-bottom: 8rem;
-  transition: all 1;
 }
 #services_section .first {
   display: grid;
@@ -144,7 +143,9 @@ body {
   border-radius: 50px;
 }
 #services_section img:hover {
+  box-shadow: 0px 0px 29px 8px #202737;
   scale: 1.02;
+  transition: all 0.4s ease-in-out;
 }
 #services_section span {
   position: absolute;
@@ -157,6 +158,14 @@ body {
   font-weight: 600;
   font-size: 0.9rem;
 }
+/* #services_section .services_one,
+.services_two,
+.services_three,
+.services_four,
+.services_five,
+.services_six {
+  transition: all 0.6s ease-in-out;
+} */
 #services_section .services_one {
   grid-column: 1 / span 3;
   grid-row: 350px;
@@ -170,14 +179,19 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 100px;
-  box-shadow: 0px 0px 29px 8px #202737;
 }
 #services_section .services_three {
   background-color: #0d1d30;
   border-radius: 50px;
   padding: 2rem;
   grid-column: 5 / span 6;
+  transition: all 0.6s ease-in-out;
 }
+#services_section .services_three:hover {
+  box-shadow: 0px 0px 29px 8px #0d1d30;
+  scale: 1.02;
+}
+
 #services_section .services_three h3 {
   font-size: 2.5rem;
   color: #e2dfdd;
@@ -315,7 +329,7 @@ body {
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .slide_indicator.active {
@@ -352,7 +366,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   grid-gap: 5rem;
-  margin: 46rem 0 10rem;
+  margin: 10rem 0 10rem;
 }
 .support_img_div {
   display: flex;
@@ -460,12 +474,14 @@ body {
   border: none;
   border-radius: 50px;
   padding: 0.5rem 1.2rem;
+  transition: all 0.4s ease-in-out;
 }
 .tab_container .tab_btn:focus,
 .tab_container .tab_btn:hover {
   background-color: #e2dfdd;
   color: #0b0f17;
   border: none;
+  padding: 0.6rem 1.3rem;
 }
 .tab_content .tab .inputs {
   display: flex;
@@ -498,6 +514,11 @@ body {
   border-radius: 50px;
   font-weight: 700;
   font-size: 1rem;
+  cursor: pointer;
+}
+.tab_content .tab form button:hover {
+  transition: all 0.4s ease-in-out;
+  scale: 1.02;
 }
 .tab_content .tab .inputs div {
   display: flex;

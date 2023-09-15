@@ -1,50 +1,69 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const slideContainer = document.querySelector(".slide_container");
-  const slideIndicators = document.querySelectorAll(".slide_indicator");
-
-  let currentSlide = 1;
-  const totalSlides = slideContainer.querySelectorAll(".slide_item").length;
+  const slideItems = document.querySelectorAll(".slide_item"); // Get all slide items
+  const totalSlides = slideItems.length;
+  let currentSlide = 0;
+  const slideWidth = 100;
 
   // Initialize the first slide and indicators
-  showSlide(currentSlide);
   updateSlideIndication();
 
   function updateSlideIndication() {
-    // Remove 'active' class from all indicators
-    slideIndicators.forEach((indicator) => {
-      indicator.classList.remove("active");
+    // Calculate the transform value for the current slide to come from the right
+    const transformValue = -(currentSlide * slideWidth) + "%";
+
+    // Apply the transform to all slide items
+    slideItems.forEach((slideItem, index) => {
+      slideItem.style.transform = `translateX(${transformValue})`;
+
+      // Add 'enter' class to the current slide for animation
+      if (index === currentSlide) {
+        slideItem.classList.add("enter");
+      } else {
+        slideItem.classList.remove("enter");
+      }
     });
 
-    // Add 'active' class to the indicator for the current slide
-    slideIndicators[currentSlide - 1].classList.add("active");
-  }
-
-  function showSlide(slideNumber) {
-    const slides = slideContainer.querySelectorAll(".slide_item");
-    slides.forEach((slide, index) => {
-      if (index === slideNumber - 1) {
-        slide.style.display = "flex";
+    // Update slide indicators
+    const slideIndicators = document.querySelectorAll(".slide_indicator");
+    slideIndicators.forEach((indicator, index) => {
+      if (index === currentSlide) {
+        indicator.classList.add("active");
       } else {
-        slide.style.display = "none";
+        indicator.classList.remove("active");
       }
     });
   }
 
-  // Automatically advance to the next slide
-  function autoAdvanceSlide() {
-    if (currentSlide < totalSlides) {
+  // Function to enter the next slide
+  function enterNextSlide() {
+    // Remove 'enter' class from the current slide
+    slideItems[currentSlide].classList.remove("enter");
+
+    // Move to the next slide
+    const previousSlide = currentSlide; // Store the previous slide index
+
+    if (currentSlide < totalSlides - 1) {
       currentSlide++;
     } else {
-      currentSlide = 1; // Loop back to the first slide
+      currentSlide = 0; // Reset to the first slide
     }
 
-    showSlide(currentSlide);
+    // Update indicators and show the next slide
     updateSlideIndication();
+
+    // Add 'enter' class to the new current slide for animation
+    slideItems[currentSlide].classList.add("enter");
+
+    // Apply a transition only when moving forward (left to right)
+    slideItems[currentSlide].style.transition = "transform 1s ease-in-out";
+
+    // Remove the transition from the previous slide
+    slideItems[previousSlide].style.transition = "none";
   }
 
-  // Set an interval to auto-advance the slides every X milliseconds
-  const interval = 4000;
-  setInterval(autoAdvanceSlide, interval);
+  // Set an interval to enter the next slide after a certain delay
+  const interval = 5000;
+  setInterval(enterNextSlide, interval);
 });
 
 // Tab

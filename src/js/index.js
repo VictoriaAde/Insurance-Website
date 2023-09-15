@@ -42,10 +42,10 @@ class App {
       opacity: 1,
     });
 
-    gsap.set("#testimonial_section", {
-      y: 100,
-      opacity: 1,
-    });
+    // gsap.set("#testimonial_section", {
+    //   y: 100,
+    //   opacity: 1,
+    // });
 
     gsap.set("#support_section", {
       opacity: 1,
@@ -147,12 +147,6 @@ class App {
         },
         "-=1"
       )
-      .to("#testimonial_section", {
-        opacity: 1,
-        y: 0,
-        ease: "expo.out",
-        duration: 2,
-      })
       .to(
         "#support_section",
         {

@@ -21,8 +21,9 @@ class App {
       x: -100,
     });
 
-    gsap.set("#hero_section h1 span", {
+    gsap.set("#hero_section h1", {
       y: 100,
+      x: 2,
       opacity: 1,
     });
 
@@ -87,27 +88,32 @@ class App {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#hero",
-        start: "10% 30%",
+        start: "5% 30%",
         end: "93% 3%",
         scrub: true,
         markers: false,
       },
     });
 
-    tl.to(".nav_middle_links, .nav_end_links", {
-      opacity: 0.7,
-      x: 0,
-      duration: 2,
-      stagger: 0.1,
-    })
+    tl.to(
+      ".nav_middle_links, .nav_end_links",
+      {
+        opacity: 0.7,
+        x: 0,
+        duration: 2,
+        stagger: 0.1,
+      },
+      "-=1"
+    )
       .to(
         "#hero_section h1",
         {
-          opacity: 0.6,
+          opacity: 1,
           y: 0,
+          x: 0,
           ease: "expo.out",
           duration: 2,
-          //   stagger: 0.3,
+          stagger: 0.3,
         },
         "-=1"
       )

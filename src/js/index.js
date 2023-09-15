@@ -21,7 +21,7 @@ class App {
       x: -100,
     });
 
-    gsap.set("#hero_section h1", {
+    gsap.set("#hero_section h1 span", {
       y: 100,
       opacity: 1,
     });

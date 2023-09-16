@@ -22,8 +22,7 @@ class App {
     });
 
     gsap.set("#hero_section h1", {
-      y: 100,
-      x: 2,
+      x: 0,
       opacity: 1,
     });
 
@@ -138,9 +137,8 @@ class App {
       .to(
         "#hero_section h1",
         {
-          opacity: 1,
-          y: 0,
-          x: 0,
+          opacity: 0.6,
+          x: -100,
           ease: "expo.out",
           duration: 2,
           stagger: 0.3,

@@ -23,6 +23,7 @@ class App {
 
     gsap.set("#hero_section h1", {
       x: 0,
+      y: 0,
       opacity: 1,
     });
 
@@ -84,15 +85,28 @@ class App {
       },
     });
 
-    tlImg.to(
-      ".hero_img_div img",
-      {
-        scaleY: 0.7,
-        duration: 2.5,
-        ease: "power4.out",
-      },
-      "-=1"
-    );
+    tlImg
+      .to(
+        ".hero_img_div img",
+        {
+          scaleY: 0.7,
+          duration: 2.5,
+          ease: "power4.out",
+        },
+        1
+      )
+      .to(
+        "#hero_section h1",
+        {
+          opacity: 0.6,
+          x: -100,
+          y: -100,
+          ease: "power4.out",
+          duration: 2.5,
+          stagger: 0.3,
+        },
+        1
+      );
 
     const tlImg2 = gsap.timeline({
       scrollTrigger: {
@@ -134,17 +148,7 @@ class App {
       },
       "-=1"
     )
-      .to(
-        "#hero_section h1",
-        {
-          opacity: 0.6,
-          x: -100,
-          ease: "expo.out",
-          duration: 2,
-          stagger: 0.3,
-        },
-        "-=1"
-      )
+
       .to(
         ".hero_text_one, .hero_text_two, .hero_img_div",
         {

@@ -33,6 +33,7 @@ class App {
     });
 
     gsap.set(".hero_img_div img", {
+      transformOrigin: "top center",
       scaleY: 1,
     });
 
@@ -49,6 +50,11 @@ class App {
     gsap.set("#support_section", {
       opacity: 1,
       y: 100,
+    });
+
+    gsap.set(".support_img_div img", {
+      transformOrigin: "top center",
+      scaleY: 1,
     });
 
     gsap.set(".calculate_and_links_section", {
@@ -72,18 +78,38 @@ class App {
     const tlImg = gsap.timeline({
       scrollTrigger: {
         trigger: ".hero_img_div img",
-        start: "5% 10%",
+        start: "5% 5%",
         end: "93% 1%",
         scrub: true,
-        markers: true,
+        markers: false,
       },
     });
 
     tlImg.to(
       ".hero_img_div img",
       {
-        scaleY: 0,
-        duration: 5,
+        scaleY: 0.7,
+        duration: 2.5,
+        ease: "power4.out",
+      },
+      "-=1"
+    );
+
+    const tlImg2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".support_img_div img",
+        start: "5% 10%",
+        end: "93% 1%",
+        scrub: true,
+        markers: false,
+      },
+    });
+
+    tlImg2.to(
+      ".support_img_div img",
+      {
+        scaleY: 0.7,
+        duration: 2.5,
         ease: "power4.out",
       },
       "-=1"
